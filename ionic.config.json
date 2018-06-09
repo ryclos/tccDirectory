@@ -1,0 +1,8 @@
+{
+  "name": "tccDirectory",
+  "app_id": "aba18bbc",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
