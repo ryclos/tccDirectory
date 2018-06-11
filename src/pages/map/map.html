@@ -8,11 +8,22 @@
 
   <ion-navbar>
     <ion-title>map</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="addMarker()"><ion-icon name="add"></ion-icon>Ajouter un marqueur</button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <div #map id="map"></div>
 </ion-content>
+
+<ion-footer>
+
+    <ion-navbar color="danger">
+      <ion-title class="center">map</ion-title>
+    </ion-navbar>
+  
+  </ion-footer>
