@@ -19,6 +19,7 @@ import { Geolocation } from "@ionic-native/geolocation";
 import { InAppBrowser } from "@ionic-native/in-app-browser";
 import { SMS } from "@ionic-native/sms";
 import { SQLite } from "@ionic-native/sqlite";
+import { IonicStorageModule } from "@ionic/storage";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SQLite } from "@ionic-native/sqlite";
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

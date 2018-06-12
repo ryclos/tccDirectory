@@ -88,4 +88,7 @@
     </plugin>
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
     <plugin name="cordova-sms-plugin" spec="^0.1.11" />
+    <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
+        <string>We want your location! Best regards NSA</string>
+    </edit-config>
 </widget>

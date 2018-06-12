@@ -17,19 +17,25 @@ export class MapPage {
 
   @ViewChild('map') mapRef: ElementRef;
   map: any;
-  constructor(public navCtrl: NavController, private geo: Geolocation) {}
+  constructor(public navCtrl: NavController, private geo: Geolocation) { }
 
   ionViewDidLoad() {
-   this.loadMap();
+    this.loadMap();
   }
 
 
   loadMap() {
-    let latLng = new google.maps.LatLng(-17.546039, -149.570258);
-    let mapOptions = {
-      center: latLng,
-      zoom: 15,
+    this.geo.getCurrentPosition()
+      .then(() => {
+        let latLng = new google.maps.LatLng(-17.546039, -149.570258);
+        let mapOptions = {
+          center: latLng,
+          zoom: 15,
+        }
+        this.map = new google.maps.Map(this.mapRef.nativeElement, mapOptions);
+      }, (err) => {
+        console.log(err);
+      });
     }
-    this.map = new google.maps.Map(this.mapRef.nativeElement, mapOptions);
-  }
+
 }
