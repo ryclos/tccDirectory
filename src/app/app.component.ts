@@ -1,16 +1,16 @@
-import { MapPage } from './../pages/map/map';
+// import { MapPage } from './../pages/map/map';
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-/* import { WelcomePage } from '../pages/welcome/welcome'; */
-
+//import { FichePage } from '../pages/fiche/fiche'; 
+import { WelcomePage } from '../pages/welcome/welcome'; 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = MapPage;
+  rootPage:any = WelcomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

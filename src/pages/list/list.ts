@@ -1,3 +1,4 @@
+import { FichePage } from './../fiche/fiche';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -14,6 +15,10 @@ export class ListPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListPage');
+  }
+
+  launchFiche(){
+    this.navCtrl.push(FichePage);
   }
 
 }

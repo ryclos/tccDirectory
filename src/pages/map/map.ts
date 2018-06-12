@@ -9,7 +9,7 @@ declare var google;
  * Tinirau, Poe et Hiomai
  */
 
-@Component({
+Component({
   selector: 'page-map',
   templateUrl: 'map.html',
 })
