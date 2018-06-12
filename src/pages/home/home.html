@@ -5,15 +5,27 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-buttons>
-        <ion-label>Toppings</ion-label>
-        <ion-select [(ngModel)]="toppings" multiple="true">
-            <ion-option>Bacon</ion-option>
-            <ion-option>Black Olives</ion-option>
-            <ion-option>Extra Cheese</ion-option>
-            <ion-option>Mushrooms</ion-option>
-            <ion-option>Pepperoni</ion-option>
-            <ion-option>Sausage</ion-option>
-        </ion-select>
-    </ion-buttons>
+
+    <ion-list *ngFor="let skill of news.name">
+        <ion-item>
+            <ion-label>Compétences</ion-label>
+            <ion-select [(ngModel)]="toppings" multiple="true" cancelText="Quit" okText="Okay!">
+                <ion-option value="PHP" selected="true">PHP</ion-option>
+                <ion-option value="JAVASCRIPT">JAVASCRIPT</ion-option>
+                <ion-option value="JAVA" selected="true">JAVA</ion-option>
+                <ion-option value="HTML">HTML</ion-option>
+                <ion-option value="ANGULAR">ANGULAR</ion-option>
+                <ion-option value="REACT">REACT</ion-option>
+                <ion-option value="MYSQL">MSQL</ion-option>
+                <ion-option value="MONGODB">MONGODB</ion-option>
+                <ion-option value="FIREBASE">FIREBASE</ion-option>
+                <ion-option value="IOS">IOS</ion-option>
+                <ion-option value="ANDROID">ANDROID</ion-option>
+                <ion-option value="IONIC">IONIC</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+
+    <button ion-button round>GO!</button>
+
 </ion-content>
