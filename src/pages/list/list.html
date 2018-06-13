@@ -6,13 +6,24 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>list</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>list</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+    <ion-card-header>
+        Explore Nearby
+    </ion-card-header>
+
+    <ion-list>
+        <button ion-item>
+          <ion-icon name="cart" item-start></ion-icon>
+         <div *ngFor="let list of news.data">{{ list.name }}</div>
+        </button>
+    </ion-list>
 
 </ion-content>
