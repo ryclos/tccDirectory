@@ -1,14 +1,20 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Compétences</ion-title>
+    </ion-navbar>
 </ion-header>
 
-<ion-content (tap)="launchFiche()">
-  <h2>Welcome to tahiti code camp Directory
-    Atua Dév'.....!</h2>
-  <p>
+<ion-content padding>
 
-  
-  </p>
+    <ion-list>
+        <ion-item>
+            <ion-label>Compétences</ion-label>
+            <ion-select [(ngModel)]="toppings" multiple="true" cancelText="Quit" okText="Okay!">
+                <ion-option *ngFor="let skill of news.data">{{ skill.name }}</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+
+    <div><button ion-button round>GO!</button></div>
+
 </ion-content>

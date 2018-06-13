@@ -1,7 +1,7 @@
-// import { FichePage } from './../fiche/fiche';
+import { TccDirectoryApiService } from '../../services/TccDirectoryApi.service';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { TabsPage } from './../tabs/tabs';
+import { TccDirectoryApiGlobal } from '../../models/tccdirectoryapi-global.model';
 
 
 @Component({
@@ -10,11 +10,16 @@ import { TabsPage } from './../tabs/tabs';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
-   
-  }
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
+  news: TccDirectoryApiGlobal = new TccDirectoryApiGlobal();
+  toppings: any;
+
+  constructor(public navCtrl: NavController, private tccdirectoryapiService: TccDirectoryApiService,) {
+
+    this.tccdirectoryapiService.getSkills()
+    .then(newsFetched => { 
+      this.news = newsFetched
+      console.log(this.news);
+    });
   }
 
   launchFiche() {

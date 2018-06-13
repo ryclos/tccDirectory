@@ -1,6 +1,6 @@
-//import { MapPage } from './../pages/map/map'; // projet si projet initial fini :)
+import { TccDirectoryApiService } from '../services/TccDirectoryApi.service';
+import { MapPage } from './../pages/map/map'; // projet si projet initial fini :)
 import { ListPage } from './../pages/list/list';
-
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -21,6 +21,7 @@ import {Geolocation } from "@ionic-native/geolocation";
 import { InAppBrowser } from "@ionic-native/in-app-browser";
 import { SMS } from "@ionic-native/sms";
 import { SQLite } from "@ionic-native/sqlite";
+import { HttpModule } from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { SQLite } from "@ionic-native/sqlite";
     FichePage
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
@@ -49,6 +51,7 @@ import { SQLite } from "@ionic-native/sqlite";
      FichePage
   ],
   providers: [
+    TccDirectoryApiService,
     StatusBar,
     SplashScreen,
  

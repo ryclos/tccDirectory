@@ -1,3 +1,4 @@
+import { HomePage } from './../pages/home/home';
 // import { MapPage } from './../pages/map/map';
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
