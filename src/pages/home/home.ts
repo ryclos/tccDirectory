@@ -1,9 +1,8 @@
+import { WelcomePage } from './../welcome/welcome';
 import { TccDirectoryApiService } from '../../services/TccDirectoryApi.service';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { TccDirectoryApiGlobal } from '../../models/tccdirectoryapi-global.model';
-import { TabsPage } from '../tabs/tabs';
-
 
 
 @Component({
@@ -25,7 +24,7 @@ export class HomePage {
   }
 
   launchFiche() {
-    this.navCtrl.push(TabsPage);
+    this.navCtrl.push(WelcomePage);
   }
 }
 
