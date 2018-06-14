@@ -43,29 +43,29 @@ export class MapPage {
         console.log(err);
       });
   }
-  
+
   addResultsMarker() {
     let marker, i;
 
     for (i = 0; i < this.results.length; i++) {
-        marker = new google.maps.Marker({
-            position: new google.maps.LatLng(this.results[i].latitude, this.results[i].longitude),
-            map: this.map
-        });
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(this.results[i].latitude, this.results[i].longitude),
+        map: this.map
+      });
 
-        let contentString = "<div>" + "<img src='" + 
-            this.results[i].logo + "'  style = 'display: block; margin-left: auto; margin-right: auto; width: 50%; height: 50%'/>" + '</div>' +
-            "<hr/><div style = 'text-align: center'><h2>" + this.results[i].name + '</h2></div>';
-        let infoWindow = new google.maps.InfoWindow({
-            content: contentString,
-            maxWidth: 256
-        });
+      let contentString = "<div>" + "<img src='" +
+        this.results[i].logo + "'  style = 'display: block; margin-left: auto; margin-right: auto; width: 50%; height: 50%'/>" + '</div>' +
+        "<hr/><div style = 'text-align: center'><h2>" + this.results[i].name + '</h2></div>';
+      let infoWindow = new google.maps.InfoWindow({
+        content: contentString,
+        maxWidth: 256
+      });
 
-        google.maps.event.addListener(marker, "click", () => {
-            infoWindow.open(this.map, marker);
-        });
+      google.maps.event.addListener(marker, "click", () => {
+        infoWindow.open(this.map, marker);
+      });
     }
-}
+  }
 
   /* getSearchResults() {
     this.value = this.navParams.get('value');

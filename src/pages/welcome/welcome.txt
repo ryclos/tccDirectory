@@ -1,0 +1,46 @@
+import { Component } from '@angular/core';
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
+import { NavController, NavParams, Platform } from 'ionic-angular';
+import { TabsPage } from './../tabs/tabs';
+/**
+ * Generated class for the WelcomePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@Component({
+  selector: 'page-welcome',
+  templateUrl: 'welcome.html',
+
+})
+export class WelcomePage {
+  database: SQLiteObject;
+  progress: any;
+
+  constructor(private platform: Platform, public navCtrl: NavController, public navParams: NavParams, private sqlite: SQLite) {
+    this.platform.ready().then(() => {
+      this.redirectToTabs();
+    })
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad WelcomePage');
+  }
+
+  redirectToTabs() {
+    let limit = 2;
+    let counter = 0;
+    let myInterval = setInterval(() => {
+      counter++;
+      console.log('counter', counter);
+      this.progress = counter * 100 / limit;
+      console.log('progress', this.progress);
+      if (counter == limit) {
+        clearInterval(myInterval);
+        this.navCtrl.push(TabsPage);
+      }
+    }, 1000);
+  }
+
+}
