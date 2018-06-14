@@ -10,7 +10,7 @@
       <ion-option *ngFor="let data of skills.data" value={{data.id}}>{{ data.name }}</ion-option>
     </ion-select>
   </ion-item>
-  <div>
-    <button ion-button round class="go" (tap)="launchPageList()">GO!</button>
-  </div>
+  <button (tap)="launchPageList()" ion-button small>
+    Go!
+  </button>
 </ion-content>
