@@ -10,7 +10,21 @@
       <ion-option *ngFor="let data of skills.data" value={{data.id}}>{{ data.name }}</ion-option>
     </ion-select>
   </ion-item>
-  <button (tap)="launchPageList()" ion-button small>
-    Go!
-  </button>
+  <ion-list>
+    <ion-card  *ngFor="let listepro of liste.data" (click)="launchPageList(listepro.id)">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src={{listepro.logo}}>
+        </ion-avatar>
+        <h2>{{listepro.name}}</h2>
+        <button ion-button item-end icon-right clear small>
+          <ion-icon name="star"></ion-icon>
+        </button>
+        <button ion-button item-end icon-right clear small>
+          <ion-icon name="thumbs-down"></ion-icon>
+          <div>{{listepro.abus}}</div>
+        </button>
+      </ion-item>
+    </ion-card>
+  </ion-list>
 </ion-content>

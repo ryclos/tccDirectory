@@ -1,10 +1,10 @@
+import { FichePage } from './../fiche/fiche';
 import { TccDirectoryApiService } from '../../services/TccDirectoryApi.service';
 import { Component } from '@angular/core';
 import { NavController, Platform } from 'ionic-angular';
 import { TccDirectoryApiGlobal } from '../../models/tccdirectoryapi-global.model';
 import { TccDirectoryApiGlobalList } from '../../models/tccdirectoryapi-globallist.model';
 import { TccDirectoryApiBusiness } from '../../models/tccdirectoryapi-business.model';
-import { FichePage } from '../fiche/fiche';
 import { ListPage } from '../list/list';
 
 
@@ -49,7 +49,7 @@ export class HomePage {
   }
 
   launchPageList(id) {
-    this.navCtrl.push(ListPage, { data: id });
+    this.navCtrl.push(FichePage, { data: id });
   }
   onChange($event) {
 
