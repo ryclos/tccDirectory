@@ -40,12 +40,7 @@ export class WelcomePage {
   createFavorisTable() {
     this.database.executeSql('CREATE TABLE IF NOT EXISTS Favoris (id INTEGER PRIMARY KEY, name TEXT,  logo TEXT)', {})
       .then(() => {
-        this.checkFavorisExist().then((data) => {
-          let totalFavoris = data;
-          console.log('totalFavoris', data);
-          if (totalFavoris = 21) this.redirectToTabs();
-          else this.insertFavorisDatas();
-        });
+  
       })
       .catch(e => console.log(e));
   }
@@ -66,11 +61,11 @@ export class WelcomePage {
       .catch(e => console.log(e));
   }
 
-  insertFavorisDatas() {
+  insertFavorisDatas(value) {
 
     let inserts =
     "INSERT INTO `favoris` VALUES ();";
-  ;
+    
     this.database.executeSql(inserts, {})
       .then(() => {
        this.redirectToTabs()

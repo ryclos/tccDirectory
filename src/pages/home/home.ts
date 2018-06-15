@@ -5,7 +5,6 @@ import { NavController, Platform } from 'ionic-angular';
 import { TccDirectoryApiGlobal } from '../../models/tccdirectoryapi-global.model';
 import { TccDirectoryApiGlobalList } from '../../models/tccdirectoryapi-globallist.model';
 import { TccDirectoryApiBusiness } from '../../models/tccdirectoryapi-business.model';
-import { ListPage } from '../list/list';
 
 
 @Component({
@@ -16,10 +15,10 @@ export class HomePage {
 
   params: Object;
   selected_skills: string;
-  liste: TccDirectoryApiGlobalList = new TccDirectoryApiGlobalList();
+  liste: TccDirectoryApiGlobal = new TccDirectoryApiGlobal();
   posts: any;
 
-  skills: TccDirectoryApiGlobal = new TccDirectoryApiGlobal();
+  skills: TccDirectoryApiGlobalList = new TccDirectoryApiGlobalList();
   news: TccDirectoryApiBusiness = new TccDirectoryApiBusiness();
   toppings: any;
 
@@ -48,9 +47,12 @@ export class HomePage {
       })
   }
 
+  //Direction vers la page d'information après avoir cliqué sur un une liste
   launchPageList(id) {
-    this.navCtrl.push(FichePage, { data: id });
+    this.navCtrl.push(FichePage, { idBusiness: id });
   }
+
+  //Filtre
   onChange($event) {
 
     this.selected_skills = $event;

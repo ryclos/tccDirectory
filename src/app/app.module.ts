@@ -1,19 +1,16 @@
-import { ListPage } from './../pages/list/list';
-import { OnboardingPage } from './../pages/onboarding/onboarding';
-
-import { TccDirectoryApiService } from '../services/TccDirectoryApi.service';
-
+//Fonctionalités
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { TccDirectoryApiService } from '../services/TccDirectoryApi.service';
 
 //Pages
 import { HomePage } from '../pages/home/home';
 import { FavorisPage } from './../pages/favoris/favoris';
 import { FichePage } from './../pages/fiche/fiche';
 import { WelcomePage } from './../pages/welcome/welcome';
-import { TabsPage } from '../pages/tabs/tabs';
+import { OnboardingPage } from './../pages/onboarding/onboarding';
 
 // Plugins
 import { StatusBar } from '@ionic-native/status-bar';
@@ -28,11 +25,9 @@ import { HttpModule } from '@angular/http';
 @NgModule({
   declarations: [
     MyApp,
-    TabsPage,
     HomePage,
     OnboardingPage,
     WelcomePage,
-    ListPage,
     FavorisPage,
     FichePage
   ],
@@ -44,11 +39,9 @@ import { HttpModule } from '@angular/http';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    TabsPage,
     HomePage,
     WelcomePage,
     OnboardingPage,
-    ListPage,
     FavorisPage,
     FichePage
   ],

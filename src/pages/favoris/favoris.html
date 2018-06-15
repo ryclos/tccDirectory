@@ -3,7 +3,21 @@
     <ion-title>Favoris</ion-title>
   </ion-navbar>
 </ion-header>
+<!-- Barre déroulante -->
 <ion-content>
+  <ion-fab top right edge>
+    <button ion-fab mini color='danger'>
+      <ion-icon name="add"></ion-icon>
+    </button>
+    <ion-fab-list>
+      <button ion-fab color='primary'>
+        <ion-icon name="star"></ion-icon>
+      </button>
+      <button ion-fab color='primary'>
+        <ion-icon name="list" (click)='goToSkill()'></ion-icon>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
   <ion-card>
     <ion-list>
       <button ion-item>

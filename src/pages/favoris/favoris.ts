@@ -1,3 +1,4 @@
+import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -9,11 +10,15 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class FavorisPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams
+  ) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FavorisPage');
+  goToSkill() {
+    this.navCtrl.push(HomePage);
   }
+  
 
 }

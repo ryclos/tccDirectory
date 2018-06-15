@@ -4,28 +4,46 @@
   </ion-navbar>
 </ion-header>
 <ion-content>
+  <!-- BARRE DEROULANTE -->
+  <ion-fab top right edge>
+    <button ion-fab mini color='danger'>
+      <ion-icon name="add"></ion-icon>
+    </button>
+    <ion-fab-list>
+      <button ion-fab color="primary" (click)='goToFavoris()'>
+        <ion-icon name="star"></ion-icon>
+      </button>
+      <button ion-fab color="primary" (click)='goToList()'>
+        <ion-icon name="list"></ion-icon>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
 
   <ion-card>
     <ion-item>
       <ion-avatar item-start>
-        <img src=[]>
+        <img [src]="news.logo">
         <!-- logo -->
       </ion-avatar>
-      <h2>Nom du professionnel</h2>
+      <h2>{{news.name}}</h2>
       <!-- nom du professionnel -->
     </ion-item>
     <ion-row class="center">
       <ion-col>
         <button ion-button small (click)="addResultsMarker()">
-          <h4>Itinéraire</h4>
+          <ion-icon name="map" isActive="false"> Itinéraire</ion-icon>
         </button>
-        <ion-icon name="map" isActive="false"></ion-icon>
       </ion-col>
       <ion-col>
-        <button ion-button small clear>
-          <h4>Signaler</h4>
+        <button ion-button small full item-end icon-right>
+          <ion-icon name="alert" isActive="false"> Signaler</ion-icon>
         </button>
-        <ion-icon name="alert" isActive="false"></ion-icon>
+
+      </ion-col>
+      <ion-col>
+        <button ion-button small full item-end icon-right>
+          <ion-icon name="star" isActive="false" url="../favoris/favoris">Favoris</ion-icon>
+        </button>
       </ion-col>
     </ion-row>
   </ion-card>
@@ -34,10 +52,18 @@
   <ion-card>
     <ion-row>
       <ion-col>
+        <h5>Site Web</h5>
+      </ion-col>
+      <ion-col>
+        <button>{{news.website_url}}</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
         <h5>Adresse</h5>
       </ion-col>
       <ion-col>
-        adresse
+        {{news.adresse}}
       </ion-col>
     </ion-row>
     <ion-row>
@@ -45,12 +71,12 @@
         <h5>Téléphone</h5>
       </ion-col>
       <ion-col>
-        <button ion-button (click)="call()">
+        <button ion-button (click)='call(news.mobile)'>
           <ion-icon name="call"></ion-icon>
         </button>
       </ion-col>
       <ion-col>
-        <button ion-button (click)="sendSms()">
+        <button ion-button (click)="sendSms(news.mobile)">
           <ion-icon name="chatboxes"></ion-icon>
         </button>
       </ion-col>
@@ -59,10 +85,11 @@
       <ion-col>
         <h5>Activités</h5>
       </ion-col>
+    </ion-row>
+    <ion-row>
       <ion-col justify-content-start>
         <!-- Description de l'activité -->
-        <p class="text-justify">Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?!
-          Whoa. This is heavy.</p>
+        <p class="text-justify">{{news.description}}</p>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -71,27 +98,21 @@
       </ion-col>
       <ion-col>
         <button ion-button>
-          <ion-icon name="logo-facebook"></ion-icon>
+          <ion-icon name="logo-facebook" (click)='openFB(news.facebook_url)'>
+
+          </ion-icon>
         </button>
       </ion-col>
       <ion-col>
         <button ion-button>
-          <ion-icon name="logo-google"></ion-icon>
+          <ion-icon name="logo-linkedin" (click)='openLinkedin(news.linkedin_url)'></ion-icon>
         </button>
       </ion-col>
       <ion-col>
         <button ion-button>
-          <ion-icon name="mail"></ion-icon>
-        </button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col class="center">
-        <button ion-button>
-          <ion-icon name="star" url="../favoris/favoris"></ion-icon>
+          <ion-icon name="mail" (click)='openEmail(news.email)'></ion-icon>
         </button>
       </ion-col>
     </ion-row>
   </ion-card>
-
 </ion-content>

@@ -43,6 +43,16 @@ export class TccDirectoryApiService {
       .catch(error => console.log('une erreur est survenue ', JSON.stringify(error)))
   }
 
+  public getBusinessById(id): Promise<any> {
+    const url = `${this.baseUrl}${this.business}${id}`;
+    console.log('getBusiness PD url', url)
+
+    return this.http.get(url)
+      .toPromise()
+      .then(Response => Response.json() as TccDirectoryApiGlobal)
+      .catch(error => console.log('une erreur est survenue ', JSON.stringify(error)))
+  }
+
   // Fonction pour récupérer l'ensemble des compétences
   public getSkillsList(): Promise<any> {
     const url = `${this.baseUrl}${this.skills}`;
